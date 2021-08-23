@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4827141805582593485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80072a5e1f80874eb50055d8f7dfd68, type: 3}
+  m_Name: NewSSMSRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    Event: 600
+    _threshold: 0
+    _softKnee: 0.5
+    _radius: 4.4
+    _blurWeight: 3.5
+    _intensity: 1
+    _highQuality: 1
+    _antiFlicker: 1
+    _fadeRamp: {fileID: 2800000, guid: d74638a0ab573cf46a872bb0d131b1e6, type: 3}
+    _blurTint: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
+  m_Name: ForwardRenderer
+  m_EditorClassIdentifier: 
+  m_RendererFeatures:
+  - {fileID: -4827141805582593485}
+  - {fileID: 8723405160702922882}
+  m_RendererFeatureMap: 33d2cf651a8c02bd82d0816bc6c20f79
+  postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
+  shaders:
+    blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
+    copyDepthPS: {fileID: 4800000, guid: d6dae50ee9e1bfa4db75f19f99355220, type: 3}
+    screenSpaceShadowPS: {fileID: 4800000, guid: 0f854b35a0cf61a429bd5dcfea30eddd,
+      type: 3}
+    samplingPS: {fileID: 4800000, guid: 04c410c9937594faa893a11dceb85f7e, type: 3}
+    fallbackErrorPS: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
+  m_OpaqueLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_TransparentLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_DefaultStencilState:
+    overrideStencilState: 0
+    stencilReference: 0
+    stencilCompareFunction: 8
+    passOperation: 0
+    failOperation: 0
+    zFailOperation: 0
+  m_ShadowTransparentReceive: 1
+--- !u!114 &8723405160702922882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680c6d38ce873d647a2162178ced5188, type: 3}
+  m_Name: NewSSMSGlobalFogRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    Event: 550
+    EditorRenderPassEvent: 250
+    useDistanceFog: 1
+    excludeFarPixels: 1
+    useRadialDistance: 1
+    useHeightFog: 1
+    fogHeight: 2.3
+    heightDensity: 100
+    startDistance: 0
+    maxDensity: 0.999
+    energyLoss: 0
+    fogTint: {r: 1, g: 1, b: 1, a: 1}
+    fogShader: {fileID: 4800000, guid: f796635016f0e5340b3c4cba03dbeb2f, type: 3}
+    setGlobalSettings: 0
+    fogColor: {r: 1, g: 1, b: 1, a: 0}
+    fogMode: 0
+    fogDensity: 0
+    fogStart: 0
+    fogEnd: 0
+    useFogHeightAnimation: 0
+    fogHeightAnimationCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightFogAnimationSpeed: 0.01
+    fogHeightAnimationModifier: 1
+    useHeightDensityAnimation: 0
+    heightDensityAnimationCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    heightDensityAnimationSpeed: 0.01
+    heightDensityAnimationModifier: 1
